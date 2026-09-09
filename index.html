@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌤️ Weather Dashboard</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for a city..." autocomplete="off">
+                <button id="searchBtn">Search</button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <p>Loading weather data...</p>
+        </div>
+
+        <div class="error" id="error" style="display: none;"></div>
+
+        <div class="weather-content" id="weatherContent" style="display: none;">
+            <!-- Current Weather -->
+            <div class="current-weather">
+                <div class="city-info">
+                    <h2 id="cityName">City Name</h2>
+                    <p id="weatherDescription">Weather Description</p>
+                </div>
+                <div class="temp-section">
+                    <div class="temperature">
+                        <span id="temp">--</span>°C
+                    </div>
+                    <div class="weather-icon">
+                        <img id="weatherIcon" src="" alt="Weather Icon">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather Details Grid -->
+            <div class="details-grid">
+                <div class="detail-card">
+                    <p class="label">Feels Like</p>
+                    <p class="value" id="feelsLike">--°C</p>
+                </div>
+                <div class="detail-card">
+                    <p class="label">Humidity</p>
+                    <p class="value" id="humidity">--%</p>
+                </div>
+                <div class="detail-card">
+                    <p class="label">Wind Speed</p>
+                    <p class="value" id="windSpeed">-- m/s</p>
+                </div>
+                <div class="detail-card">
+                    <p class="label">Pressure</p>
+                    <p class="value" id="pressure">-- hPa</p>
+                </div>
+                <div class="detail-card">
+                    <p class="label">UV Index</p>
+                    <p class="value" id="uvIndex">--</p>
+                </div>
+                <div class="detail-card">
+                    <p class="label">Visibility</p>
+                    <p class="value" id="visibility">-- km</p>
+                </div>
+            </div>
+
+            <!-- 5-Day Forecast -->
+            <div class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-grid" id="forecastGrid">
+                    <!-- Forecast cards will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="initial-message" id="initialMessage">
+            <p>👋 Welcome! Search for a city to view its weather.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
