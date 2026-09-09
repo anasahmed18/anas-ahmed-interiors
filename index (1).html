@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anas Ahmed Interiors | Hyderabad</title>
+<meta name="description" content="Anas Ahmed Interiors offers thoughtful, affordable interior design in Hyderabad and online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,560;1,9..144,420&family=Work+Sans:wght@340;400;500;620&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F2EEE4;
+    --paper-dim: #E9E3D5;
+    --ink: #201F1A;
+    --ink-soft: #55534A;
+    --teal: #2F5C56;
+    --teal-deep: #203F3B;
+    --ochre: #B8842F;
+    --clay: #A85A3B;
+    --line: rgba(32,31,26,0.14);
+    --max: 1180px;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Work Sans", -apple-system, sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  a{ color:inherit; }
+  img,svg{ display:block; max-width:100%; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; }
+
+  :focus-visible{ outline:2px solid var(--teal); outline-offset:3px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(242,238,228,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 32px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .brand{
+    font-family:var(--serif); font-weight:560; font-size:1.15rem;
+    letter-spacing:0.01em; text-decoration:none;
+  }
+  .brand span{ color:var(--teal); }
+  .navlinks{ display:flex; gap:36px; list-style:none; margin:0; padding:0; }
+  .navlinks a{
+    text-decoration:none; font-size:0.95rem; color:var(--ink-soft);
+    position:relative; padding-bottom:3px;
+  }
+  .navlinks a:hover{ color:var(--ink); }
+  .navlinks a::after{
+    content:""; position:absolute; left:0; right:100%; bottom:-2px; height:1px;
+    background:var(--teal); transition:right 0.25s ease;
+  }
+  .navlinks a:hover::after{ right:0; }
+  .navtoggle{ display:none; background:none; border:none; cursor:pointer; padding:4px; }
+  .navtoggle svg{ stroke:var(--ink); }
+
+  @media (max-width:760px){
+    .navlinks{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--paper); border-bottom:1px solid var(--line);
+      flex-direction:column; gap:0; max-height:0; overflow:hidden;
+      transition:max-height 0.3s ease;
+    }
+    .navlinks.open{ max-height:280px; }
+    .navlinks li{ border-top:1px solid var(--line); }
+    .navlinks a{ display:block; padding:16px 32px; }
+    .navlinks a::after{ display:none; }
+    .navtoggle{ display:block; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    padding:96px 0 80px;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:40px; align-items:center;
+  }
+  .eyebrow{
+    font-size:0.95rem; color:var(--teal); font-weight:500;
+    margin:0 0 18px;
+  }
+  h1.display{
+    font-family:var(--serif); font-weight:480; font-style:normal;
+    font-size:clamp(2.6rem, 5.4vw, 4.4rem);
+    line-height:1.04; letter-spacing:-0.01em;
+    margin:0 0 26px; max-width:12ch;
+  }
+  .hero-line{ display:block; opacity:0; transform:translateY(16px); animation:rise 0.7s ease forwards; }
+  .hero-line:nth-child(1){ animation-delay:0.05s; }
+  .hero-line:nth-child(2){ animation-delay:0.2s; }
+  .hero-line:nth-child(3){ animation-delay:0.35s; font-style:italic; color:var(--teal); }
+  @keyframes rise{ to{ opacity:1; transform:translateY(0); } }
+
+  .hero p.sub{
+    font-size:1.15rem; color:var(--ink-soft); max-width:42ch; margin:0 0 34px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--teal); color:var(--paper);
+    text-decoration:none; font-family:var(--sans); font-weight:500; font-size:1rem;
+    padding:15px 26px; border:none; cursor:pointer;
+    transition:background 0.2s ease, transform 0.2s ease;
+  }
+  .btn:hover{ background:var(--teal-deep); transform:translateY(-1px); }
+  .btn-ghost{
+    background:none; border:1px solid var(--ink); color:var(--ink);
+  }
+  .btn-ghost:hover{ background:var(--ink); color:var(--paper); }
+
+  .hero-art{ position:relative; }
+  .hero-meta{
+    margin-top:36px; padding-top:20px; border-top:1px solid var(--line);
+    font-size:0.9rem; color:var(--ink-soft);
+  }
+
+  @media (max-width:860px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-art{ order:-1; width:60%; margin:0 auto 12px; opacity:0.7; }
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:96px 0; }
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:24px; margin-bottom:56px; border-bottom:1px solid var(--line); padding-bottom:28px;
+  }
+  .kicker{ font-size:0.95rem; color:var(--teal); font-weight:500; margin:0 0 10px; }
+  h2.display{
+    font-family:var(--serif); font-weight:480; font-size:clamp(1.9rem, 3.4vw, 2.7rem);
+    margin:0; letter-spacing:-0.01em; max-width:16ch;
+  }
+  .section-note{ max-width:32ch; color:var(--ink-soft); font-size:0.98rem; text-align:right; }
+  @media (max-width:700px){
+    .section-head{ flex-direction:column; align-items:flex-start; }
+    .section-note{ text-align:left; }
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{ display:grid; grid-template-columns:1.3fr 0.9fr; gap:64px; }
+  .about-grid p{ font-size:1.08rem; color:var(--ink-soft); max-width:56ch; }
+  .about-grid p + p{ margin-top:20px; }
+  .pull{
+    border-left:2px solid var(--ochre); padding:4px 0 4px 24px;
+    font-family:var(--serif); font-style:italic; font-size:1.3rem; color:var(--ink);
+    align-self:start;
+  }
+  @media (max-width:860px){ .about-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Services (editorial rows) ---------- */
+  .service-row{
+    display:grid; grid-template-columns:1fr 1.6fr; gap:32px;
+    padding:34px 0; border-bottom:1px solid var(--line);
+  }
+  .service-row:first-of-type{ border-top:1px solid var(--line); }
+  .service-row h3{
+    font-family:var(--serif); font-weight:480; font-size:1.5rem; margin:0; color:var(--ink);
+  }
+  .service-row p{ margin:0; color:var(--ink-soft); max-width:52ch; align-self:center; }
+  @media (max-width:700px){ .service-row{ grid-template-columns:1fr; gap:10px; } }
+
+  /* ---------- Portfolio ---------- */
+  .gallery{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;
+  }
+  .concept{
+    aspect-ratio:4/5; position:relative; padding:22px;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    color:var(--paper); overflow:hidden;
+  }
+  .concept h3{ font-family:var(--serif); font-weight:480; font-size:1.35rem; margin:0 0 6px; }
+  .concept .tag{ font-size:0.85rem; opacity:0.82; margin:0 0 10px; }
+  .concept p.desc{ font-size:0.92rem; opacity:0.92; margin:0; max-width:26ch; }
+  .concept::before{
+    content:""; position:absolute; inset:0; opacity:0.9;
+  }
+  .concept > *{ position:relative; z-index:1; }
+  .c1::before{ background:linear-gradient(160deg, #6B5A45, #3A3226); }
+  .c2::before{ background:linear-gradient(160deg, #7A5F63, #3D2E33); }
+  .c3::before{ background:linear-gradient(160deg, #4C6B63, #223330); }
+  @media (max-width:860px){ .gallery{ grid-template-columns:1fr; } }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; }
+  .info-block{ padding-right:24px; }
+  .info-block p{ color:var(--ink-soft); max-width:40ch; }
+  .info-list{ list-style:none; padding:0; margin:32px 0 0; }
+  .info-list li{ padding:14px 0; border-top:1px solid var(--line); font-size:0.95rem; }
+  .info-list li:last-child{ border-bottom:1px solid var(--line); }
+  .info-list strong{ display:block; font-family:var(--serif); font-size:1.05rem; margin-bottom:2px; }
+
+  form{ display:flex; flex-direction:column; gap:22px; }
+  .field{ position:relative; }
+  .field label{
+    display:block; font-size:0.85rem; color:var(--ink-soft); margin-bottom:6px;
+  }
+  .field input, .field textarea{
+    width:100%; border:none; border-bottom:1px solid var(--line);
+    background:transparent; font-family:var(--sans); font-size:1rem; color:var(--ink);
+    padding:8px 0; resize:vertical;
+  }
+  .field input:focus, .field textarea:focus{
+    outline:none; border-bottom:1px solid var(--teal);
+  }
+  .field textarea{ min-height:90px; }
+  form .btn{ align-self:flex-start; margin-top:8px; }
+  @media (max-width:860px){ .contact-grid{ grid-template-columns:1fr; } .info-block{ padding-right:0; } }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--line); padding:36px 0;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:0.88rem; color:var(--ink-soft);
+  }
+  footer .brand{ font-size:1rem; }
+  @media (max-width:600px){ footer{ flex-direction:column; gap:14px; text-align:center; } }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="#home">Anas Ahmed <span>Interiors</span></a>
+    <button class="navtoggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navlinks" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="home">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Hyderabad · Online &amp; on-site</p>
+        <h1 class="display">
+          <span class="hero-line">A home that</span>
+          <span class="hero-line">feels</span>
+          <span class="hero-line">like you.</span>
+        </h1>
+        <p class="sub">Interior design for real apartments and rentals in Hyderabad — built around how you actually live, not a showroom fantasy.</p>
+        <a class="btn" href="#contact">Book a free consultation</a>
+        <div class="hero-meta">Rooms, full apartments and quick consultations — in person across Hyderabad, or anywhere over video.</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 400V170C40 100 90 40 160 40C230 40 280 100 280 170V400" stroke="#2F5C56" stroke-width="2"/>
+          <path d="M70 400V180C70 122 108 76 160 76C212 76 250 122 250 180V400" stroke="#B8842F" stroke-width="1.4" stroke-dasharray="3 6"/>
+          <line x1="10" y1="400" x2="310" y2="400" stroke="#201F1A" stroke-opacity="0.35" stroke-width="1"/>
+          <circle cx="160" cy="150" r="5" fill="#A85A3B"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">About the studio</p>
+          <h2 class="display">Beautiful spaces, made practical.</h2>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>Most design help out there assumes you own the place, have an unlimited budget, or want to redo everything at once. I don't assume any of that.</p>
+          <p>Welcome to Anas Ahmed Interiors — I work with Hyderabad homeowners and renters to make confident design decisions, from arranging a single room to planning an entire apartment. Whether it's one room or a full home, we start with what you already have, what you can spend, and how you actually use the space, then build a plan around that.</p>
+        </div>
+        <p class="pull">"Every project begins with how you live — not with a template."</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Services</p>
+          <h2 class="display">Design support, your way.</h2>
+        </div>
+        <p class="section-note">Pick the level of help that matches your project — from a single room to a full home.</p>
+      </div>
+
+      <div class="service-row">
+        <h3>Online room design</h3>
+        <p>A mood board, furniture layout, colour palette and shopping list for one room, delivered remotely.</p>
+      </div>
+      <div class="service-row">
+        <h3>Apartment planning</h3>
+        <p>A full design direction for your 1BHK or 2BHK: layout, finishes, and a shopping plan that fits your budget.</p>
+      </div>
+      <div class="service-row">
+        <h3>Design consultation</h3>
+        <p>A focused video call to solve one specific problem — a layout, a colour choice, or a piece you're stuck on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Portfolio concepts</p>
+          <h2 class="display">Spaces with soul.</h2>
+        </div>
+        <p class="section-note">Design directions to inspire your project — every client space is planned uniquely.</p>
+      </div>
+      <div class="gallery">
+        <div class="concept c1">
+          <p class="tag">Living room concept</p>
+          <h3>Warm Minimal Living</h3>
+          <p class="desc">Warm woods, soft neutrals, and enough empty space to breathe.</p>
+        </div>
+        <div class="concept c2">
+          <p class="tag">Bedroom concept</p>
+          <h3>Soft Retreat</h3>
+          <p class="desc">A calm, low-clutter bedroom built for actual rest.</p>
+        </div>
+        <div class="concept c3">
+          <p class="tag">Kitchen concept</p>
+          <h3>Everyday Ease</h3>
+          <p class="desc">Small-kitchen storage and flow that works for daily cooking, not just photos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="info-block">
+        <p class="kicker">Start your project</p>
+        <h2 class="display">Let's make your space feel right.</h2>
+        <p>Tell me what you're planning, your style, and your rough budget. I'll reply within a day with next steps — no pressure, no obligation.</p>
+        <ul class="info-list">
+          <li><strong>Location</strong>Hyderabad, India · online consultations available</li>
+          <li><strong>First consultation</strong>Free, with no obligation to continue</li>
+          <li><strong>Phone</strong><a href="tel:+917569565147">+91 75695 65147</a></li>
+          <li><strong>Email</strong><a href="mailto:ahmedmohammedanas1@gmail.com">ahmedmohammedanas1@gmail.com</a></li>
+        </ul>
+      </div>
+      <form action="https://formsubmit.co/ahmedmohammedanas1@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New enquiry from Anas Ahmed Interiors website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone number (optional)</label>
+          <input id="phone" name="phone" type="tel">
+        </div>
+        <div class="field">
+          <label for="msg">Tell me about your space</label>
+          <textarea id="msg" name="message" required></textarea>
+        </div>
+        <button class="btn" type="submit">Send enquiry</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <a class="brand" href="#home">Anas Ahmed Interiors</a>
+  <span>© 2026 Anas Ahmed Interiors · Hyderabad, India</span>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+
+</body>
+</html>
